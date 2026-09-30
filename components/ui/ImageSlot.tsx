@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/cn";
-import { hasImage } from "@/lib/images";
+import { hasImage, imageSrc, type ImageDef } from "@/lib/images";
 
 /**
  * يعرض أول ملف موجود من `files` داخل public/images/fawaz،
@@ -8,35 +8,33 @@ import { hasImage } from "@/lib/images";
  * لا صور بديلة لأشخاص آخرين.
  */
 export function ImageSlot({
-  files,
+  image,
   alt,
-  placeholderName,
   className,
   sizes = "(min-width: 1024px) 40vw, 100vw",
   priority = false,
   tone = "navy",
   hideIfMissing = false,
 }: {
-  files: string[];
+  image: ImageDef;
   alt: string;
-  placeholderName: string;
   className?: string;
   sizes?: string;
   priority?: boolean;
   tone?: "navy" | "sand";
   hideIfMissing?: boolean;
 }) {
-  const found = files.find((f) => hasImage([f]));
-  if (found) {
+  if (hasImage(image)) {
     return (
       <div className={cn("group relative overflow-hidden", className)}>
         <Image
-          src={`/images/fawaz/${found}`}
+          src={imageSrc(image)}
           alt={alt}
           fill
           sizes={sizes}
           priority={priority}
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          style={{ objectFit: image.fit ?? "cover", objectPosition: image.position ?? "center" }}
+          className="transition-transform duration-700 group-hover:scale-105"
         />
       </div>
     );
@@ -67,7 +65,7 @@ export function ImageSlot({
       <div className="relative mb-2 space-y-2">
         <span className="block text-sm opacity-85">{alt}</span>
         <span dir="ltr" className={cn("inline-block rounded-full border px-3 py-1 text-xs", dark ? "border-ivory/30 text-ivory/70" : "border-navy/30 text-navy/70")}>
-          {placeholderName}
+          {image.file}
         </span>
       </div>
     </div>

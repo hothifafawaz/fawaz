@@ -7,6 +7,8 @@ import { MethodologiesSection } from "@/components/sections/MethodologiesSection
 import { BookTrainingCTA } from "@/components/sections/BookTrainingCTA";
 import { pillars, programs } from "@/content/programs";
 import { Button } from "@/components/ui/Button";
+import { ImageSlot } from "@/components/ui/ImageSlot";
+import { images } from "@/lib/images";
 import { links } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -24,12 +26,15 @@ export default function TrainingPage() {
         title="مجالات التدريب والاستشارة"
         text="خمسة محاور تغطي التخطيط والقيادة والتفكير والأنماط والتطوير الشخصي، وكل برنامج يُبنى على احتياج الجهة أو الفرد."
       />
-      <section className="bg-navy/95 py-10 text-ivory">
-        <Container className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <p className="max-w-3xl text-lg leading-loose">
-            هذه المحاور ليست مواد جاهزة تُقدَّم كما هي. يصمّم فواز أيضًا برامج خاصة بحسب احتياج الجهة وأهدافها وتحدياتها.
-          </p>
-          <Button href={links.requestInstitutional} variant="gold">صمم برنامجًا لجهتك</Button>
+      <section className="bg-navy text-ivory">
+        <Container className="grid items-center gap-8 py-10 md:grid-cols-12 md:gap-12">
+          <ImageSlot image={images.training1} alt="برنامج تدريبي تفاعلي" sizes="(min-width:768px) 40vw, 100vw" className="aspect-[4/3] w-full rounded-xl md:col-span-5" />
+          <div className="md:col-span-7">
+            <p className="max-w-2xl text-xl font-semibold leading-loose">
+              هذه المحاور ليست مواد جاهزة تُقدَّم كما هي. يصمّم فواز أيضًا برامج خاصة بحسب احتياج الجهة وأهدافها وتحدياتها.
+            </p>
+            <div className="mt-6"><Button href={links.requestInstitutional} variant="gold">صمم برنامجًا لجهتك</Button></div>
+          </div>
         </Container>
       </section>
       <div id="programs">

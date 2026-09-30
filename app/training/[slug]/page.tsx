@@ -7,6 +7,8 @@ import { ProgramCard } from "@/components/sections/ProgramCard";
 import { BookTrainingCTA } from "@/components/sections/BookTrainingCTA";
 import { programs, getProgram, getPillar, sharedDelivery, sharedMethodology } from "@/content/programs";
 import { links } from "@/content/site";
+import { ImageSlot } from "@/components/ui/ImageSlot";
+import { images } from "@/lib/images";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -57,6 +59,9 @@ export default async function ProgramPage({ params }: Props) {
         <Button href={links.requestProgram} variant="gold">اطلب هذا البرنامج</Button>
       </PageHero>
 
+      <Container className="pt-12">
+        <ImageSlot image={images.training1} alt="برنامج تدريبي تفاعلي" sizes="(min-width:1280px) 1200px, 100vw" className="aspect-[21/9] w-full rounded-xl" />
+      </Container>
       <Container className="py-16">
         <section className="grid gap-4 pb-10 md:grid-cols-12 md:gap-10">
           <h2 className="text-2xl font-bold text-navy md:col-span-4">مقدمة</h2>

@@ -12,7 +12,7 @@ import { OrganizationStrip } from "@/components/sections/OrganizationStrip";
 import { BookTrainingCTA } from "@/components/sections/BookTrainingCTA";
 import { about, aboutPage, identity, philosophy, philosophyPrinciples, experienceYears } from "@/content/fawaz";
 import { site, links } from "@/content/site";
-import { hasImage, imageFiles } from "@/lib/images";
+import { images } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "عن فواز",
@@ -22,13 +22,6 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const gallery = [
-    { files: imageFiles.training1, name: "training-01.webp", alt: "فواز الفخري أثناء برنامج تدريبي" },
-    { files: imageFiles.speaking1, name: "speaking-01.webp", alt: "فواز الفخري أثناء إلقاء" },
-    { files: imageFiles.training2, name: "training-02.webp", alt: "مشاركون في ورشة تدريبية" },
-  ];
-  const showGallery = gallery.some((g) => hasImage(g.files));
-
   return (
     <>
       <PageHero
@@ -45,7 +38,7 @@ export default function AboutPage() {
       <section className="py-20 sm:py-28" aria-labelledby="intro-title">
         <Container className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
-            <ImageSlot files={imageFiles.portrait2} alt={site.fullName} placeholderName="portrait-02.webp" tone="sand" className="mx-auto aspect-[4/5] w-full max-w-md rounded-t-[6rem] rounded-b-xl" />
+            <ImageSlot image={images.portrait1} alt={site.fullName} tone="sand" className="mx-auto aspect-[4/5] w-full max-w-md rounded-t-[6rem] rounded-b-xl" />
           </Reveal>
           <Reveal className="lg:col-span-7" delay={0.1}>
             <p className="mb-4 text-sm font-semibold text-gold">التعريف المهني</p>
@@ -101,15 +94,20 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {showGallery && (
-        <section aria-label="من البرامج التدريبية" className="pb-20 sm:pb-28">
-          <Container className="grid gap-4 md:grid-cols-3">
-            {gallery.map((g) => (
-              <ImageSlot key={g.name} files={g.files} alt={g.alt} placeholderName={g.name} tone="sand" hideIfMissing sizes="(min-width:768px) 33vw, 100vw" className="aspect-[4/3] w-full" />
-            ))}
-          </Container>
-        </section>
-      )}
+      <section className="pb-20 sm:pb-28" aria-labelledby="speaking-title">
+        <Container className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="lg:col-span-7 lg:order-2">
+            <ImageSlot image={images.speaking1} alt="فواز الفخري أمام الجمهور" tone="sand" sizes="(min-width:1024px) 55vw, 100vw" className="aspect-[4/3] w-full rounded-xl" />
+          </Reveal>
+          <Reveal delay={0.1} className="lg:col-span-5 lg:order-1">
+            <p className="mb-4 text-sm font-semibold text-gold">أمام الجمهور</p>
+            <h2 id="speaking-title" className="h2 text-navy">تدريب يُقدَّم بالحوار والممارسة</h2>
+            <p className="mt-5 text-lg leading-loose text-muted">
+              يقدّم فواز برامجه أمام فئات متنوعة من القيادات والموظفين والمعلمين والطلاب، بأسلوب يعتمد على المشاركة والتطبيق لا على الإلقاء وحده.
+            </p>
+          </Reveal>
+        </Container>
+      </section>
 
       <ExperienceSectors id="journey" />
       <Credentials />

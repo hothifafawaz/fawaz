@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
-import { imageFiles } from "@/lib/images";
+import { images } from "@/lib/images";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 
 export function AboutSection() {
@@ -12,9 +12,8 @@ export function AboutSection() {
       <Container className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <Reveal className="lg:col-span-5">
           <ImageSlot
-            files={imageFiles.portrait1}
+            image={images.portrait1}
             alt={`${site.fullName}`}
-            placeholderName="portrait-01.webp"
             tone="sand"
             sizes="(min-width: 1024px) 40vw, 90vw"
             className="mx-auto aspect-[4/5] w-full max-w-md rounded-2xl lg:max-w-none"

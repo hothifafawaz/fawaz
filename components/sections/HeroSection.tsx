@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { ImageSlot } from "@/components/ui/ImageSlot";
-import { imageFiles } from "@/lib/images";
+import { images } from "@/lib/images";
 import { CountUp } from "@/components/ui/CountUp";
 
 export function HeroSection() {
@@ -34,9 +34,8 @@ export function HeroSection() {
           <div className="relative mx-auto max-w-md lg:max-w-none">
             <div aria-hidden className="absolute -bottom-4 -end-4 size-full rounded-t-[8rem] rounded-b-2xl bg-sand" />
             <ImageSlot
-              files={imageFiles.hero}
+              image={images.hero}
               alt={`${site.name} — ${hero.imageCaption}`}
-              placeholderName="fawaz-hero.jpg"
               priority
               sizes="(min-width: 1024px) 40vw, 90vw"
               className="relative aspect-[4/5] w-full rounded-t-[8rem] rounded-b-2xl"
