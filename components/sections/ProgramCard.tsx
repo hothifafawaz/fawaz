@@ -6,7 +6,7 @@ export function ProgramCard({ program, index }: { program: Program; index?: numb
   return (
     <Link
       href={`/training/${program.slug}`}
-      className="group flex h-full flex-col justify-between rounded-2xl border border-sand-dark bg-paper p-7 transition-all duration-300 hover:-translate-y-1 hover:border-navy hover:shadow-xl hover:shadow-navy/10"
+      className="group flex h-full flex-col justify-between rounded-2xl border border-sand-dark bg-paper p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy hover:shadow-lg hover:shadow-navy/10"
     >
       <div>
         <div className="flex items-center justify-between text-sm">

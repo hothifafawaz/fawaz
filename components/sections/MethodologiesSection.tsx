@@ -9,8 +9,7 @@ export function MethodologiesSection() {
     <section className="relative overflow-hidden bg-navy py-20 text-ivory sm:py-28" aria-labelledby="meth-title">
       <div className="grain absolute inset-0" aria-hidden />
       <Container className="relative">
-        <SectionHeading light eyebrow="أدوات التفكير" title={methodologiesIntro.title} text={methodologiesIntro.text} />
-        <span id="meth-title" className="sr-only">{methodologiesIntro.title}</span>
+        <SectionHeading id="meth-title" light eyebrow="أدوات التفكير" title={methodologiesIntro.title} text={methodologiesIntro.text} />
         {[
           { label: "أدوات التفكير والإبداع", group: "thinking", cols: "lg:grid-cols-3" },
           { label: "أدوات فهم الأنماط والسلوك", group: "behavior", cols: "lg:grid-cols-4" },

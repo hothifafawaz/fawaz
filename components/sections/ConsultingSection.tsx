@@ -13,15 +13,14 @@ export function ConsultingSection({ showHeading = true }: { showHeading?: boolea
           <div className="lg:sticky lg:top-28">
             {showHeading ? (
               <>
-                <SectionHeading eyebrow="الاستشارات المؤسسية" title={consultingSection.title} text={consultingSection.text} />
-                <span id="consulting-title" className="sr-only">{consultingSection.title}</span>
+                <SectionHeading id="consulting-title" eyebrow="الاستشارات المؤسسية" title={consultingSection.title} text={consultingSection.text} />
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Button href={links.requestConsulting}>{consultingSection.cta}</Button>
                   <Button href="/consulting" variant="secondary">تفاصيل الاستشارات</Button>
                 </div>
               </>
             ) : (
-              <SectionHeading title="الخدمات الاستشارية" text="ثمانية مسارات عمل تنتقل بالجهة من فهم الواقع إلى التنفيذ." />
+              <SectionHeading id="consulting-title" title="الخدمات الاستشارية" text="ثمانية مسارات عمل تنتقل بالجهة من فهم الواقع إلى التنفيذ." />
             )}
           </div>
         </div>

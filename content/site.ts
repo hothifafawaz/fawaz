@@ -12,6 +12,7 @@ export const site = {
   descriptor: "التفكير • القيادة • التخطيط • التطوير",
   shortDescriptor: "التفكير • القيادة • التخطيط",
   role: "مدرب التفكير والموهبة والتطوير القيادي",
+  roleShort: "مدرب ومستشار في التفكير والقيادة والتخطيط والتطوير المؤسسي",
   roleLong:
     "مدرب التفكير والموهبة والتطوير القيادي ومستشار التخطيط والتطوير المؤسسي",
   location: "سيئون – حضرموت – اليمن",
@@ -46,6 +47,7 @@ export const site = {
 
 export const links = {
   requestProgram: "/contact?type=program",
+  requestInstitutional: "/contact?type=institutional",
   requestConsulting: "/contact?type=consulting",
   contact: "/contact",
   mailto: `mailto:${site.contact.email}`,
@@ -56,15 +58,14 @@ export const nav = [
   { label: "عن فواز", href: "/about" },
   { label: "مجالات التدريب", href: "/training" },
   { label: "الاستشارات", href: "/consulting" },
-  { label: "البرامج", href: "/training#programs" },
-  { label: "الأثر والتجارب", href: "/#experience" },
+  { label: "للمؤسسات", href: "/organizations" },
   { label: "المعرفة", href: "/knowledge" },
   { label: "تواصل", href: "/contact" },
 ];
 
 export const footerNav = [
   { label: "عن فواز", href: "/about" },
-  { label: "التدريب", href: "/training" },
+  { label: "مجالات التدريب", href: "/training" },
   { label: "الاستشارات", href: "/consulting" },
   { label: "المؤسسات", href: "/organizations" },
   { label: "المعرفة", href: "/knowledge" },
@@ -79,8 +80,8 @@ export const legalNav = [
 export const requestTypes = [
   { value: "program", label: "برنامج تدريبي" },
   { value: "consulting", label: "استشارة" },
+  { value: "institutional", label: "تدريب مؤسسي" },
+  { value: "event", label: "دعوة لفعالية" },
   { value: "collaboration", label: "تعاون" },
-  { value: "event", label: "دعوة فعالية" },
-  { value: "media", label: "طلب إعلامي" },
   { value: "other", label: "أخرى" },
 ] as const;

@@ -35,13 +35,12 @@ export function ExpertiseSection() {
   return (
     <section className="bg-sand/60 py-20 sm:py-28" aria-labelledby="expertise-title">
       <Container>
-        <SectionHeading
+        <SectionHeading id="expertise-title"
           eyebrow="خمسة محاور"
           title="مجالات التدريب والاستشارة"
-          text="مجالات متعددة منظمة في خمسة محاور، لتجد الطريق الأقرب إلى احتياجك."
+          text="مجالات متعددة منظمة في خمسة محاور. بعضها برامج قائمة، وبعضها يُبنى بحسب احتياج الجهة."
           className="[&_h2]:scroll-mt-28"
         />
-        <span id="expertise-title" className="sr-only">مجالات التدريب والاستشارة</span>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div
@@ -61,7 +60,7 @@ export function ExpertiseSection() {
                 onClick={() => setActive(i)}
                 onKeyDown={(e) => onKey(e, i)}
                 className={cn(
-                  "flex shrink-0 items-center gap-4 rounded-xl border px-5 py-4 text-start transition-colors lg:w-full",
+                  "flex shrink-0 items-center gap-4 rounded-full border px-5 py-3 text-start transition-colors lg:w-full lg:rounded-xl lg:py-4",
                   active === i ? "border-navy bg-navy text-ivory" : "border-sand-dark bg-paper text-navy hover:border-navy",
                 )}
               >
@@ -76,9 +75,9 @@ export function ExpertiseSection() {
             id={`${uid}-panel`}
             aria-labelledby={`${uid}-tab-${active}`}
             tabIndex={0}
-            className="rounded-2xl bg-paper p-7 shadow-sm shadow-navy/5 sm:p-10 lg:col-span-8"
+            className="border-t-2 border-navy pt-8 lg:col-span-8 lg:ps-6"
           >
-            <p className="ltr-num text-6xl font-bold text-sand-dark">{p.number}</p>
+            <p className="ltr-num text-7xl font-bold leading-none text-sand-dark sm:text-8xl">{p.number}</p>
             <h3 className="mt-2 text-2xl font-bold text-navy sm:text-3xl">{p.title}</h3>
             <p className="mt-3 max-w-xl text-lg leading-loose text-muted">{p.summary}</p>
             <ul className="mt-8 grid gap-x-8 gap-y-3 sm:grid-cols-2">

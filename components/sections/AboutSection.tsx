@@ -3,6 +3,7 @@ import { site } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { imageFiles } from "@/lib/images";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 
 export function AboutSection() {
@@ -11,7 +12,7 @@ export function AboutSection() {
       <Container className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <Reveal className="lg:col-span-5">
           <ImageSlot
-            files={["portrait-01.webp"]}
+            files={imageFiles.portrait1}
             alt={`${site.fullName}`}
             placeholderName="portrait-01.webp"
             tone="sand"

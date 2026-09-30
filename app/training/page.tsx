@@ -6,6 +6,8 @@ import { ProgramCard } from "@/components/sections/ProgramCard";
 import { MethodologiesSection } from "@/components/sections/MethodologiesSection";
 import { BookTrainingCTA } from "@/components/sections/BookTrainingCTA";
 import { pillars, programs } from "@/content/programs";
+import { Button } from "@/components/ui/Button";
+import { links } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "مجالات التدريب",
@@ -20,8 +22,16 @@ export default function TrainingPage() {
         crumbs={[{ label: "مجالات التدريب" }]}
         eyebrow="التدريب"
         title="مجالات التدريب والاستشارة"
-        text="خمسة محاور تغطي التفكير والقيادة والتخطيط والتطوير الشخصي، وكل برنامج يُبنى على احتياج الجهة أو الفرد."
+        text="خمسة محاور تغطي التخطيط والقيادة والتفكير والأنماط والتطوير الشخصي، وكل برنامج يُبنى على احتياج الجهة أو الفرد."
       />
+      <section className="bg-navy/95 py-10 text-ivory">
+        <Container className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <p className="max-w-3xl text-lg leading-loose">
+            هذه المحاور ليست مواد جاهزة تُقدَّم كما هي. يصمّم فواز أيضًا برامج خاصة بحسب احتياج الجهة وأهدافها وتحدياتها.
+          </p>
+          <Button href={links.requestInstitutional} variant="gold">صمم برنامجًا لجهتك</Button>
+        </Container>
+      </section>
       <div id="programs">
         {pillars.map((pl, idx) => {
           const list = programs.filter((p) => p.pillar === pl.id);

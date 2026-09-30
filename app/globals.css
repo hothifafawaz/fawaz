@@ -10,7 +10,7 @@
   --color-sand-dark: #d9cdb6;
   --color-ink: #1c1c20;
   --color-muted: #55575f;
-  --color-gold: #8f6d2c;
+  --color-gold: #7a5c20;
   --color-gold-soft: #c9a55c;
   --font-sans: var(--font-plex), "Noto Sans Arabic", system-ui, sans-serif;
 }
@@ -37,8 +37,9 @@ h1, h2, h3, h4 {
 p { text-wrap: pretty; }
 
 :focus-visible {
-  outline: 3px solid var(--color-gold-soft);
-  outline-offset: 3px;
+  outline: 2px solid var(--color-navy);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--color-gold-soft);
   border-radius: 4px;
 }
 

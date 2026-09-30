@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero crumbs={[{ label: "تواصل" }]} eyebrow="تواصل" title="حدثنا عن احتياجك" text="اكتب لنا عن البرنامج أو الاستشارة أو التعاون الذي تفكر فيه، وسنعود إليك." />
+      <PageHero crumbs={[{ label: "تواصل" }]} eyebrow="تواصل" title="ناقش احتياجك التدريبي أو الاستشاري" text="اكتب عن البرنامج أو الاستشارة أو التعاون الذي تفكر فيه، وسنعود إليك." />
       <Container className="grid gap-14 py-16 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <Suspense fallback={null}><ContactForm /></Suspense>

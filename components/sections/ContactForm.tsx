@@ -37,10 +37,10 @@ export function ContactForm() {
     const typeLabel = requestTypes.find((t) => t.value === v("type"))?.label ?? "";
     const body = [
       `الاسم: ${v("name")}`,
-      `الجهة / المؤسسة: ${v("org")}`,
+      `اسم الجهة: ${v("org")}`,
       `المسمى الوظيفي: ${v("role")}`,
       `البريد الإلكتروني: ${v("email")}`,
-      `الهاتف: ${v("phone")}`,
+      `رقم الهاتف: ${v("phone")}`,
       `نوع الطلب: ${typeLabel}`,
       "",
       v("message"),
@@ -59,7 +59,7 @@ export function ContactForm() {
           <Err id="name-err" msg={errors.name} />
         </div>
         <div>
-          <label htmlFor="org" className="font-semibold text-navy">الجهة / المؤسسة</label>
+          <label htmlFor="org" className="font-semibold text-navy">اسم الجهة</label>
           <input id="org" name="org" autoComplete="organization" className={field} />
         </div>
         <div>
@@ -67,13 +67,13 @@ export function ContactForm() {
           <input id="role" name="role" autoComplete="organization-title" className={field} />
         </div>
         <div>
+          <label htmlFor="phone" className="font-semibold text-navy">رقم الهاتف</label>
+          <input id="phone" name="phone" type="tel" dir="ltr" autoComplete="tel" className={cn(field, "text-end")} />
+        </div>
+        <div>
           <label htmlFor="email" className="font-semibold text-navy">البريد الإلكتروني <span aria-hidden className="text-red-700">*</span></label>
           <input id="email" name="email" type="email" dir="ltr" autoComplete="email" required aria-invalid={!!errors.email} aria-describedby={errors.email ? "email-err" : undefined} className={cn(field, "text-end")} />
           <Err id="email-err" msg={errors.email} />
-        </div>
-        <div>
-          <label htmlFor="phone" className="font-semibold text-navy">رقم الهاتف</label>
-          <input id="phone" name="phone" type="tel" dir="ltr" autoComplete="tel" className={cn(field, "text-end")} />
         </div>
         <div>
           <label htmlFor="type" className="font-semibold text-navy">نوع الطلب <span aria-hidden className="text-red-700">*</span></label>
@@ -85,7 +85,7 @@ export function ContactForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="message" className="font-semibold text-navy">حدثنا عن احتياجك <span aria-hidden className="text-red-700">*</span></label>
+        <label htmlFor="message" className="font-semibold text-navy">تفاصيل الاحتياج <span aria-hidden className="text-red-700">*</span></label>
         <textarea id="message" name="message" rows={6} required aria-invalid={!!errors.message} aria-describedby={errors.message ? "message-err" : undefined} className={field} />
         <Err id="message-err" msg={errors.message} />
       </div>

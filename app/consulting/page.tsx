@@ -10,6 +10,8 @@ import { Faq } from "@/components/sections/Faq";
 import { ConsultingCTA } from "@/components/sections/ConsultingCTA";
 import { consultingFaq } from "@/content/faq";
 import { links } from "@/content/site";
+import { ImageSlot } from "@/components/ui/ImageSlot";
+import { imageFiles } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "الاستشارات المؤسسية",
@@ -31,7 +33,7 @@ export default function ConsultingPage() {
         crumbs={[{ label: "الاستشارات" }]}
         eyebrow="الاستشارات المؤسسية"
         title="استشارات تساعد المؤسسة على الانتقال من التشخيص إلى التنفيذ"
-        text="التخطيط الاستراتيجي والتشغيلي، وتحليل الاحتياج، وبناء الخطط، وتطوير القيادات، وتصميم البرامج التدريبية، والتغيير المؤسسي."
+        text="تبدأ الاستشارة من تحليل الاحتياج الفعلي وفهم تحديات الجهة وأهدافها، ثم تنتقل إلى خطة أو برنامج أو نظام عمل يمكن تنفيذه ومتابعته."
       >
         <Button href={links.requestConsulting} variant="gold">اطلب جلسة تشخيص أولية</Button>
       </PageHero>
@@ -39,7 +41,10 @@ export default function ConsultingPage() {
       <section className="bg-sand/60 py-20">
         <Container className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5"><SectionHeading eyebrow="كيف نعمل" title="من التشخيص إلى التنفيذ" /></div>
-          <div className="lg:col-span-7"><ProcessTimeline items={flow} /></div>
+          <div className="lg:col-span-7">
+            <ImageSlot files={imageFiles.consulting1} alt="جلسة استشارية مؤسسية" placeholderName="consulting-01.webp" tone="sand" hideIfMissing sizes="(min-width:1024px) 55vw, 100vw" className="mb-10 aspect-[16/9] w-full rounded-xl" />
+            <ProcessTimeline items={flow} />
+          </div>
         </Container>
       </section>
       <CaseStudy />

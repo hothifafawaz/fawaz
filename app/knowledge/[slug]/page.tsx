@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { KnowledgeCard } from "@/components/sections/KnowledgeCard";
 import { BookTrainingCTA } from "@/components/sections/BookTrainingCTA";
-import { knowledge, getKnowledge, typeLabel } from "@/content/knowledge";
+import { knowledge, getKnowledge, typeLabel, editorialNote } from "@/content/knowledge";
 import { site } from "@/content/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -37,6 +37,7 @@ export default async function KnowledgeArticle({ params }: Props) {
           </Container>
         </header>
         <Container className="max-w-3xl py-16">
+          <p className="mb-10 border-s-4 border-gold bg-sand/60 p-4 text-sm leading-loose text-navy">{editorialNote}</p>
           {k.body.map((s, i) => (
             <section key={i} className="mb-10">
               {s.heading && <h2 className="mb-4 text-2xl font-bold text-navy">{s.heading}</h2>}
@@ -52,7 +53,6 @@ export default async function KnowledgeArticle({ params }: Props) {
             description: k.excerpt,
             datePublished: k.date,
             inLanguage: "ar",
-            author: { "@id": `${site.url}/#person` },
             publisher: { "@id": `${site.url}/#person` },
             mainEntityOfPage: `${site.url}/knowledge/${k.slug}`,
           }}

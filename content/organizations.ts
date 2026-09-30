@@ -16,9 +16,14 @@ export const organizations = [
   "مشروع GIZ في اليمن",
 ];
 
-export const trustCaption =
-  "خبرة تدريبية واستشارية مع جهات حكومية وتعليمية وتنموية ومجتمعية";
-export const trustNote = "جهات شارك معها في برامج تدريبية أو استشارية";
+export const trustCaption = "جهات ومؤسسات شارك معها في برامج تدريبية أو استشارية";
+export const trustNote =
+  "خبرة تدريبية واستشارية مع جهات حكومية وتعليمية وتنموية ومجتمعية.";
+
+export const organizationGroups = [
+  { title: "جهات حكومية وتعليمية", names: organizations.slice(0, 5) },
+  { title: "مؤسسات تنموية ومجتمعية", names: organizations.slice(5) },
+];
 
 export const segments = [
   {

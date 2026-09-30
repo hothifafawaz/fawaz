@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import { site } from "@/content/site";
+import { identity } from "@/content/fawaz";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MotionProvider } from "@/components/ui/MotionProvider";
@@ -54,10 +55,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 name: site.fullName,
                 alternateName: site.name,
                 jobTitle: site.role,
-                description: site.description,
                 url: site.url,
                 email: site.contact.email,
                 telephone: site.contact.phones.map((p) => p.tel),
+                knowsAbout: identity.fields,
                 sameAs,
                 address: {
                   "@type": "PostalAddress",
@@ -73,7 +74,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 description: site.description,
                 url: site.url,
                 provider: { "@id": `${site.url}/#person` },
-                areaServed: "اليمن",
                 email: site.contact.email,
                 telephone: site.contact.phones.map((p) => p.tel),
               },

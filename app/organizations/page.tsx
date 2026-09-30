@@ -29,20 +29,23 @@ export default function OrganizationsPage() {
   return (
     <>
       <PageHero
-        crumbs={[{ label: "المؤسسات" }]}
+        crumbs={[{ label: "للمؤسسات" }]}
         eyebrow="للمؤسسات"
         title="حلول تدريبية واستشارية مصممة لاحتياج المؤسسة"
+        text="لا يبدأ العمل مع الجهة من مادة جاهزة، بل من تحليل احتياجها الفعلي وتحدياتها وأهدافها، ثم تصميم البرنامج أو الاستشارة المناسبة."
       >
-        <Button href={links.requestProgram} variant="gold">أرسل احتياج الجهة</Button>
+        <Button href={links.requestInstitutional} variant="gold">أرسل احتياج الجهة</Button>
       </PageHero>
-      <section className="py-20">
-        <Container>
-          <SectionHeading title="قطاعات نعمل معها" />
-          <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {segments.map((s, i) => (
-              <Reveal as="li" key={s.title} delay={(i % 3) * 0.07} className="rounded-2xl border border-sand-dark bg-paper p-7">
+      <section className="py-20" aria-labelledby="seg-title">
+        <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <SectionHeading id="seg-title" title="قطاعات يعمل معها" text="لكل قطاع لغته واحتياجاته، ويُبنى العمل على هذا الاختلاف لا على مادة واحدة للجميع." />
+          </div>
+          <ul className="lg:col-span-8">
+            {segments.map((s) => (
+              <Reveal as="li" key={s.title} className="grid gap-2 border-t border-sand-dark py-6 last:border-b sm:grid-cols-[12rem_1fr] sm:gap-8">
                 <h3 className="text-xl font-bold text-navy">{s.title}</h3>
-                <p className="mt-2 leading-loose text-muted">{s.text}</p>
+                <p className="leading-loose text-muted">{s.text}</p>
               </Reveal>
             ))}
           </ul>

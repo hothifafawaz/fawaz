@@ -73,12 +73,6 @@ export function Header() {
               اطلب برنامجًا تدريبيًا
             </Button>
           </div>
-          <Link
-            href={links.requestConsulting}
-            className="hidden px-2 text-[0.95rem] font-semibold text-navy underline-offset-4 hover:underline 2xl:inline"
-          >
-            احجز استشارة
-          </Link>
           <button
             type="button"
             className="inline-flex size-11 items-center justify-center rounded-full border border-sand-dark text-navy xl:hidden"

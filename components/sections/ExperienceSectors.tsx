@@ -9,8 +9,7 @@ export function ExperienceSectors({ id = "experience" }: { id?: string }) {
     <section id={id} className="bg-sand/60 py-20 sm:py-28" aria-labelledby={`${id}-title`}>
       <Container className="grid gap-14 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-7">
-          <SectionHeading eyebrow="الأثر والتجارب" title="سجل الخبرات عبر القطاعات" text="خبرة ممتدة في خمسة قطاعات، لكل منها احتياجاتها ولغتها وطريقة عملها." />
-          <span id={`${id}-title`} className="sr-only">سجل الخبرات</span>
+          <SectionHeading id={`${id}-title`} eyebrow="الأثر والتجارب" title="سجل الخبرات عبر القطاعات" text="خبرة ممتدة في خمسة قطاعات، لكل منها احتياجاتها ولغتها وطريقة عملها." />
           <div className="mt-12">
             <ProcessTimeline items={experienceSectors.map((s) => ({ title: s.title, meta: s.text, text: s.detail }))} />
           </div>

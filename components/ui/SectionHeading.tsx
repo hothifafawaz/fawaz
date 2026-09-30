@@ -7,6 +7,7 @@ export function SectionHeading({
   light,
   className,
   as: Tag = "h2",
+  id,
 }: {
   eyebrow?: string;
   title: string;
@@ -14,6 +15,7 @@ export function SectionHeading({
   light?: boolean;
   className?: string;
   as?: "h1" | "h2";
+  id?: string;
 }) {
   return (
     <div className={cn("max-w-3xl", className)}>
@@ -23,7 +25,7 @@ export function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <Tag className={cn("h2 whitespace-pre-line", light ? "text-ivory" : "text-navy")}>{title}</Tag>
+      <Tag id={id} className={cn("h2 whitespace-pre-line", light ? "text-ivory" : "text-navy")}>{title}</Tag>
       {text && (
         <p className={cn("mt-5 text-lg leading-loose", light ? "text-ivory/80" : "text-muted")}>{text}</p>
       )}

@@ -10,8 +10,7 @@ export function FeaturedPrograms() {
     <section className="bg-ivory py-20 sm:py-28" aria-labelledby="programs-title">
       <Container>
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <SectionHeading eyebrow="البرامج" title="برامج تدريبية مختارة" />
-          <span id="programs-title" className="sr-only">برامج تدريبية مختارة</span>
+          <SectionHeading id="programs-title" eyebrow="البرامج" title="برامج تدريبية مختارة" />
           <Button href="/training#programs" variant="secondary" className="self-start">عرض جميع البرامج</Button>
         </div>
         <ul className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
