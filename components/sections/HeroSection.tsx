@@ -40,7 +40,7 @@ export function HeroSection() {
               sizes="(min-width: 1024px) 40vw, 90vw"
               className="relative aspect-[4/5] w-full rounded-t-[8rem] rounded-b-2xl"
             />
-            <div className="absolute -start-3 top-16 rounded-xl bg-paper px-5 py-4 shadow-xl shadow-navy/10 sm:-start-8">
+            <div className="absolute bottom-6 start-3 rounded-xl lg:bottom-auto lg:top-16 lg:-start-3 bg-paper px-5 py-4 shadow-xl shadow-navy/10 sm:-start-8">
               <p className="text-3xl font-bold text-navy">
                 <CountUp to={experienceYears} />
                 <span className="ltr-num">+</span>

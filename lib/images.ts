@@ -19,9 +19,9 @@ export type ImageDef = {
 export const images = {
   hero: { file: "hero.webp", fit: "cover", position: "50% 20%" },
   portrait1: { file: "portrait-01.webp", fit: "cover", position: "50% 25%" },
-  training1: { file: "training-01.webp", fit: "cover", position: "50% 50%" },
+  training1: { file: "training-01.webp", fit: "cover", position: "50% 25%" },
   speaking1: { file: "speaking-01.webp", fit: "cover", position: "50% 40%" },
-  consulting1: { file: "consulting-01.webp", fit: "cover", position: "50% 50%" },
+  consulting1: { file: "consulting-01.webp", fit: "cover", position: "50% 25%" },
 } satisfies Record<string, ImageDef>;
 
 export const imageSrc = (img: ImageDef) => `/images/fawaz/${img.file}`;
