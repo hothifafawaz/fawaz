@@ -34,6 +34,7 @@ export const site = {
       { label: "+967 777 375 326", tel: "+967777375326" },
       { label: "+967 712 680 631", tel: "+967712680631" },
     ],
+    whatsapp: "https://wa.me/967777375326",
   },
   /** أضف هنا YouTube / LinkedIn / Instagram / X عند توفّر الروابط الرسمية. */
   social: [
@@ -76,12 +77,3 @@ export const legalNav = [
   { label: "سياسة الخصوصية", href: "/privacy" },
   { label: "الشروط والأحكام", href: "/terms" },
 ];
-
-export const requestTypes = [
-  { value: "program", label: "برنامج تدريبي" },
-  { value: "consulting", label: "استشارة" },
-  { value: "institutional", label: "تدريب مؤسسي" },
-  { value: "event", label: "دعوة لفعالية" },
-  { value: "collaboration", label: "تعاون" },
-  { value: "other", label: "أخرى" },
-] as const;

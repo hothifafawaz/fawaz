@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { SocialIcon } from "@/components/ui/SocialIcon";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
-import { ContactForm } from "@/components/sections/ContactForm";
+import { Button } from "@/components/ui/Button";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -14,12 +13,41 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const facebook = site.social.find((s) => s.id === "facebook");
+
   return (
     <>
       <PageHero crumbs={[{ label: "تواصل" }]} eyebrow="تواصل" title="ناقش احتياجك التدريبي أو الاستشاري" text="اكتب عن البرنامج أو الاستشارة أو التعاون الذي تفكر فيه، وسنعود إليك." />
       <Container className="grid gap-14 py-16 lg:grid-cols-12">
         <div className="lg:col-span-7">
-          <Suspense fallback={null}><ContactForm /></Suspense>
+          <h2 className="text-2xl font-bold text-navy">تواصل مباشرة</h2>
+          <p className="mt-3 max-w-md leading-loose text-muted">اختر الوسيلة الأنسب لك، وسنعود إليك في أقرب وقت.</p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Button
+              href={site.contact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="gold"
+              arrow={false}
+            >
+              <MessageCircle aria-hidden className="size-5" />
+              تواصل عبر واتساب
+              <span className="sr-only"> (يفتح في نافذة جديدة)</span>
+            </Button>
+            {facebook && (
+              <Button
+                href={facebook.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                arrow={false}
+              >
+                <SocialIcon id={facebook.id} className="size-5" />
+                تواصل عبر فيسبوك
+                <span className="sr-only"> (يفتح في نافذة جديدة)</span>
+              </Button>
+            )}
+          </div>
         </div>
         <aside className="lg:col-span-5">
           <div className="rounded-2xl bg-sand p-8">

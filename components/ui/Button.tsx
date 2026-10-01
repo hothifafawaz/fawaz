@@ -18,16 +18,22 @@ export function Button({
   arrow = true,
   className,
   children,
+  target,
+  rel,
 }: {
   href: string;
   variant?: Variant;
   arrow?: boolean;
   className?: string;
   children: React.ReactNode;
+  target?: string;
+  rel?: string;
 }) {
   return (
     <Link
       href={href}
+      target={target}
+      rel={rel}
       className={cn(
         "group inline-flex min-h-12 items-center justify-center gap-2 rounded-full border px-6 py-3 text-base font-semibold transition-colors duration-300",
         variants[variant],
